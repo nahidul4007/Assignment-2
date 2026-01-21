@@ -3,164 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <title>TechWave</title>
-    <link class="icon" rel="shortcut icon" href="data:image/png;base64,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" type="image/x-icon">
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
 
-    <header id="header">
-        <div class="header-container">
-            <div class="logo">
-                <img src="./assets/TechWave.png">
-            </div>
+<header>
+    <div class="header-container">
+        <div class="logo">TechWave</div>
 
-            <nav class="navigation">
-                <ul>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#episodes">Episodes</a></li>
-                    <li><a href="#host">Host</a></li>
-                </ul>
-            </nav>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#episodes">Episodes</a>
+            <a href="#host">Host</a>
+        </nav>
 
-            <button id="subscribe-btn">Subscribe</button>
+        <button class="btn-main">Subscribe</button>
+    </div>
+</header>
+
+<section class="banner">
+    <div class="banner-left">
+        <h1>TechWave</h1>
+        <p>Your daily dose of tech insights, productivity hacks, and personal growth.</p>
+        <div class="buttons">
+            <button class="btn-main">Listen on Spotify</button>
+            <button class="btn-outline">Subscribe</button>
         </div>
-    </header>
+    </div>
+</section>
 
-    <section id="banner">
-        <div class="banner-image">
-            <img src="./assets/microphone.png">
-            <span class="new-badge">NEW</span>
+<section id="about" class="section">
+    <h2>About The Podcast</h2>
+    <p>
+        TechWave is your go-to podcast for staying ahead in the fast-paced world of technology.
+        We break down complex topics and share stories of personal growth.
+    </p>
+
+    <div class="grid">
+        <div class="card">
+            <h3>150K+</h3>
+            <p>Monthly Listeners</p>
         </div>
-
-        <div class="banner-text">
-            <h1>TechWave</h1>
-            <p>Your daily dose of tech insights, productivity hacks, and personal growth</p>
-
-            <div class="banner-buttons">
-                <button>Listen on Spotify</button>
-                <button>Subscribe</button>
-            </div>
+        <div class="card">
+            <h3>200+</h3>
+            <p>Episodes Published</p>
         </div>
-    </section>
-
-    <main>
-
-        <section id="about">
-            <h2>About The Podcast</h2>
-            <p>
-                TechWave is your go-to podcast for staying ahead in the fast-paced world of technology.
-                We break down complex topics and share stories of personal growth.
-            </p>
-
-            <div class="stats">
-                <div>
-                    <h3>150K+</h3>
-                    <p>Monthly Listeners</p>
-                </div>
-                <div>
-                    <h3>200+</h3>
-                    <p>Episodes Published</p>
-                </div>
-                <div>
-                    <h3>4.9★</h3>
-                    <p>Average Rating</p>
-                </div>
-                <div>
-                    <h3>50+</h3>
-                    <p>Industry Experts</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="features">
-            <h2>Why Choose TechWave</h2>
-
-            <div class="feature-list">
-                <div class="feature-item">
-                    <h3>Premium Audio Quality</h3>
-                    <p>Crystal-clear sound with professional-grade production.</p>
-                </div>
-
-                <div class="feature-item">
-                    <h3>Mobile Friendly</h3>
-                    <p>Listen anytime, anywhere.</p>
-                </div>
-
-                <div class="feature-item">
-                    <h3>Global Community</h3>
-                    <p>Listeners from over 120 countries.</p>
-                </div>
-
-                <div class="feature-item">
-                    <h3>Exclusive Interviews</h3>
-                    <p>Deep conversations with industry leaders.</p>
-                </div>
-
-                <div class="feature-item">
-                    <h3>Rich Resources</h3>
-                    <p>Show notes, transcripts, and learning materials.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="episodes">
-            <h2>Featured Episodes</h2>
-
-            <div class="episodes-list">
-                <div class="episode">
-                    <h3>The Future of AI in Everyday Life</h3>
-                    <p>42 minutes</p>
-                </div>
-
-                <div class="episode">
-                    <h3>Building Better Habits for Remote Work</h3>
-                    <p>35 minutes</p>
-                </div>
-
-                <div class="episode">
-                    <h3>Career Growth in Tech: A Roadmap</h3>
-                    <p>51 minutes</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Host -->
-        <section id="host">
-            <h2>Meet The Host</h2>
-
-            <div class="host-info">
-                <img src="./assets/host.png">
-
-                <h3>Alex Kumar</h3>
-                <p>
-                    Tech entrepreneur and productivity expert with over 10 years of experience
-                    in the tech industry.
-                </p>
-
-                <div class="social-links">
-                    <span>LinkedIn</span>
-                    <span>Twitter</span>
-                    <span>Instagram</span>
-                    <span>YouTube</span>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <footer id="footer">
-        <img src="./assets/TechWave-2.png">
-
-        <div class="footer-links">
-            <span>Spotify</span>
-            <span>Apple Podcasts</span>
-            <span>YouTube</span>
-            <span>Twitter</span>
+        <div class="card">
+            <h3>4.9★</h3>
+            <p>Average Rating</p>
         </div>
+    </div>
+</section>
 
-        <p>&copy; 2026 TechWave Podcast. All rights reserved.</p>
-    </footer>
+<section id="episodes" class="section">
+    <h2>Featured Episodes</h2>
+
+    <div class="grid">
+        <div class="card">
+            <h3>The Future of AI</h3>
+            <p>42 minutes</p>
+        </div>
+        <div class="card">
+            <h3>Remote Work Habits</h3>
+            <p>35 minutes</p>
+        </div>
+        <div class="card">
+            <h3>Career Growth in Tech</h3>
+            <p>51 minutes</p>
+        </div>
+    </div>
+</section>
+
+<section id="host" class="section">
+    <h2>Meet The Host</h2>
+    <div class="host">
+        <h3>Alex Kumar</h3>
+        <p>
+            Tech entrepreneur and productivity expert with over 10 years of experience.
+        </p>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 TechWave Podcast</p>
+</footer>
 
 </body>
 </html>
-
-<!-- Code with ~ MD.NAHIDUL ISLAM -->

@@ -10,34 +10,38 @@ html{
 }
 
 body{
-    font-family: Inter, sans-serif;
+    font-family: Arial, sans-serif;
     background: var(--bg);
     color:white;
     margin:0;
 }
 
-.text-green{color:var(--green);}
-
-.section-title{
-    font-size:2rem;
-    margin-bottom:20px;
-}
-
+/* Header */
 header{
     border-bottom:1px solid #412567;
     padding:15px 20px;
 }
 
-.banner-title{
-    font-size:3rem;
+.header-container{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    max-width:1000px;
+    margin:auto;
 }
 
-.icon{
-    width:250px;
-    height:250px;
-    border-radius:50%;
+.logo{
+    font-size:1.5rem;
+    font-weight:bold;
 }
 
+nav a{
+    color:white;
+    margin:0 10px;
+    text-decoration:none;
+}
+
+/* Buttons */
 .btn-main{
     background: linear-gradient(45deg,#F7E93F,#FB09B4,#9100F8);
     color:white;
@@ -53,6 +57,32 @@ header{
     color:white;
 }
 
+/* Banner */
+.banner{
+    padding:80px 20px;
+    text-align:center;
+}
+
+.banner h1{
+    font-size:3rem;
+}
+
+.buttons{
+    margin-top:20px;
+}
+
+/* Sections */
+.section{
+    padding:60px 20px;
+    max-width:1000px;
+    margin:auto;
+}
+
+.section h2{
+    margin-bottom:20px;
+}
+
+/* Grid */
 .grid{
     display:grid;
     grid-template-columns: repeat(3,1fr);
@@ -65,45 +95,34 @@ header{
     border-radius:10px;
 }
 
-.card:hover{
-    transform: scale(1.03);
-}
-
-iframe{
-    width:100%;
-    border-radius:12px;
-}
-
-.avatar{
-    border-radius:50%;
-    border:1px solid #533C72;
-}
-
-footer{
-    padding:40px 20px;
+/* Host */
+.host{
+    background:var(--card);
+    padding:30px;
+    border-radius:10px;
     text-align:center;
 }
 
+/* Footer */
+footer{
+    padding:30px;
+    text-align:center;
+    border-top:1px solid #412567;
+    margin-top:40px;
+}
 
+/* Responsive */
 @media(max-width:768px){
-
-    .banner-title{
-        font-size:2rem;
-    }
-
     .grid{
         grid-template-columns:1fr;
     }
 
-    .icon{
-        width:180px;
-        height:180px;
+    .banner h1{
+        font-size:2rem;
     }
 
-}
-
-@media(min-width:768px) and (max-width:1024px){
-    .grid{
-        grid-template-columns: repeat(2,1fr);
+    .header-container{
+        flex-direction:column;
+        gap:10px;
     }
 }
