@@ -1,128 +1,519 @@
-html{
+html {
     scroll-behavior: smooth;
 }
 
-:root{
-    --main:#1A0B2E;
-    --green:#00FF88;
-    --bg:#230E3D;
-    --card:rgba(53, 17, 101, 0.4);
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root {
+    --primary-color: #1A0B2E;
+    --secondary-color: #00FF88;
+
+    --background-color: #230E3D;
+    --card-color: rgba(53, 17, 101, 0.4);
 }
 
-body{
-    font-family: Arial, sans-serif;
-    background: var(--bg);
-    color:white;
-    margin:0;
+body {
+    font-family: "Inter", sans-serif;
+    color: white;
 }
 
-/* Header */
-header{
-    border-bottom:1px solid #412567;
-    padding:15px 20px;
+.bg-primary {
+    background-color: var(--primary-color);
 }
 
-.header-container{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    max-width:1000px;
-    margin:auto;
+.bg-background {
+    background-color: var(--background-color);
 }
 
-.logo{
-    font-size:1.5rem;
-    font-weight:bold;
+.bg-secondary {
+    background-color: var(--secondary-color);
 }
 
-nav a{
-    color:white;
-    margin:0 10px;
-    text-decoration:none;
+.bg-card {
+    background-color: var(--card-color);
 }
 
-/* Buttons */
-.btn-main{
-    background: linear-gradient(45deg,#F7E93F,#FB09B4,#9100F8);
-    color:white;
-    padding:10px 20px;
-    border-radius:6px;
-    border:none;
+.primary-text {
+    color: var(--primary-color);
+}
+.secondary-text {
+    color: var(--secondary-color);
 }
 
-.btn-outline{
-    border:1px solid var(--green);
-    padding:10px 20px;
-    background:transparent;
-    color:white;
+.about-paragraph {
+    font-family: "Inter", sans-serif;
+    font-size: 1rem;
+    line-height: 22px;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 400;
 }
 
-/* Banner */
-.banner{
-    padding:80px 20px;
-    text-align:center;
+.card-paragraph {
+    font-size: 1rem;
+    line-height: 24px;
+    color: white;
+    opacity: 0.6;
+    font-weight: 400;
 }
 
-.banner h1{
-    font-size:3rem;
+.card-header {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: auto;
 }
 
-.buttons{
-    margin-top:20px;
+.section-header {
+    font-size: 3rem;
+    font-weight: 700;
 }
 
-/* Sections */
-.section{
-    padding:60px 20px;
-    max-width:1000px;
-    margin:auto;
+.primary-btn {
+    background: linear-gradient(
+        47.64deg,
+        #F7E93F 0%,
+        #FB09B4 50%,
+        #9100F8 100%
+    )
 }
 
-.section h2{
-    margin-bottom:20px;
+.secondary-btn {
+    border: 1px solid var(--secondary-color);
 }
 
-/* Grid */
-.grid{
-    display:grid;
-    grid-template-columns: repeat(3,1fr);
-    gap:20px;
+
+header {
+    border-bottom: 1px solid #412567;
 }
 
-.card{
-    background:var(--card);
-    padding:20px;
-    border-radius:10px;
+#hamburger-icon {
+        width: 24px;
+        height: 24px;
 }
 
-/* Host */
-.host{
-    background:var(--card);
-    padding:30px;
-    border-radius:10px;
-    text-align:center;
+.new {
+    box-shadow: 0px 3px 27px 0px rgba(0, 255, 136, 0.5);
+    font-size: 1.125rem;
+    font-weight: 600;
+    line-height: 22px;
+    color: #1A0B2E;
+    z-index: 10;
 }
 
-/* Footer */
-footer{
-    padding:30px;
-    text-align:center;
-    border-top:1px solid #412567;
-    margin-top:40px;
-}
-
-/* Responsive */
-@media(max-width:768px){
-    .grid{
-        grid-template-columns:1fr;
+.microphone-container {
+        width: 200px;
+        height: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
-    .banner h1{
-        font-size:2rem;
+.microphone {
+    z-index: 12;
+}
+
+#premium{
+    grid-area: premium;
+}
+#mobile {
+    grid-area: mobile;
+}
+#global {
+    grid-area: global;
+}
+#interview {
+    grid-area: interview;
+}
+#rich {
+    grid-area: rich;
+}
+
+.grid-container {
+    display: grid;
+    gap: 30px;
+    grid-template-areas:
+        "premium mobile mobile"
+        "premium global global"
+        "interview interview rich"
+}
+
+iframe {
+    border-radius: 24px 24px 0 0;
+}
+
+.icon-wrapper {
+    border-radius: 50%;
+    border: 1px solid #533C72;
+}
+
+
+.microphone-container,
+.new {
+  pointer-events: none;
+}
+
+.icon {
+  position: relative;
+  width: 350px;
+  height: 350px;
+}
+
+.icon img {
+  position: relative;
+  z-index: 2;
+}
+
+.icon::after {
+  content: "";
+  position: absolute;
+  inset: -20px;
+  border-radius: 50%;
+  background-color:#533C72;
+  z-index: 1;
+  opacity: 0;
+}
+
+.animation:hover .icon::after { 
+  animation: pulse 1.2s ease-out infinite;
+} 
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  70% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+}
+
+.banner-title:hover {
+    animation: gradient-move 3s ease-in alternate infinite;
+    background: linear-gradient(
+    to right,
+    #F7E93F 0%,
+    #FB09B4 50%,
+    #9100F8 100%
+  );
+  background-size: 200% 200%;
+  background-clip: text;
+  color: transparent;
+}
+
+@keyframes gradient-move {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 100% 100%; }
+}
+
+.spotify-btn {
+  box-shadow: 0 8px 30px rgba(251, 9, 180, 0.35);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.spotify-btn:hover {
+    cursor: pointer;
+  box-shadow: 0 12px 40px rgba(251, 9, 180, 0.55);
+  transform: translateY(-2px);
+}
+
+.subscribe-btn2 {
+  box-shadow: none;
+  transition: box-shadow 0.3s ease;
+}
+
+.subscribe-btn2:hover {
+    cursor: pointer;
+    box-shadow:
+        0 0 24px rgba(0, 255, 136, 0.45),
+        inset 0 0 12px rgba(0, 255, 136, 0.25);
+    transform: translateY(-2px);
+}
+
+.section-header{
+  position: relative;
+}
+
+.section-header::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: currentColor;
+  transition: width 0.3s ease;
+}
+
+.section-header:hover::after {
+  width: 100%;
+}
+
+.episodes-card:hover{
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+.wrapper:hover {
+    transform: scale(1.19);
+    transition: transform 0.3s ease;
+}
+
+@media screen and (max-width: 576px) {
+    #header,
+    .intro,
+    #about, 
+    #features,
+    #episodes,
+    #host,
+    #footer
+    {
+        max-width: 100%;
     }
 
-    .header-container{
-        flex-direction:column;
-        gap:10px;
+    #about, 
+    #features {
+        padding: 40px 20px;
+    }
+
+    .section-header {
+        font-size: 2rem;
+    }
+
+    .bg-card {
+        padding: 24px;
+    }
+
+    .episodes-card {
+        padding: 0px;
+    }
+
+    #header {
+        padding: 16px 20px;
+        align-items: center;
+    }
+
+    .logo-mobile {
+        width: 137px;
+        height: 20px;
+    }
+
+    .nav-text,
+    .subscribe-btn {
+        display: none;
+    }
+
+    .hamburger-mobile {
+        display: flex;
+        align-self: center;
+        color: white;
+    }
+
+    #hamburger {
+        display: block;
+    }  
+
+    .mobile-nav-text {
+        background-color: rgba(0, 0, 0, 0.402);
+        padding: 20px;
+        
+        transform: translateX(140%);
+        transition: 0.2s ease-in-out;
+        z-index: 1000;
+    }
+
+    #hamburger-icon:hover{
+        cursor: pointer;
+    }
+    
+    #hamburger-icon:hover + .mobile-nav-text{
+        transform: translateX(0);
+    }
+    .mobile-nav-text:hover {
+        transform: translateX(0);
+    }
+
+    #banner {
+        background-image: url(../assets/Header.png);
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        padding: 40px 20px;
+    }
+
+    .banner-title {
+        font-size: 40px;
+    }
+
+    .icon {
+        width: 200px;
+        height: 200px;
+    }
+    .img-container {
+        margin-bottom: 24px;
+    }
+
+    .microphone-container {
+        width: 80px;
+        height: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .microphone {
+        width: 47px;
+        height: 70px;
+    }
+    .new {
+        font-size: 1rem;
+        line-height: 19px;
+    }
+
+    .about-paragraph {
+        font-weight: 400;
+    }
+    
+    #about .secondary-text {
+    font-size: 2.5rem;
+    }
+
+    .about-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        padding-top: 40px;
+        gap: 40px;
+    }
+
+    .about-text {
+        margin-bottom: 40px;
+    }
+    .grid-container {
+        grid-template-areas:
+            "premium"
+            "mobile"
+            "global"
+            "interview"
+            "rich";
+        gap: 16px;
+    }
+
+    .featured {
+        font-size: 22px;
+    }
+
+    #episodes {
+        padding: 40px 20px 60px 20px;
+    } 
+
+    .episodes-title {
+        margin-bottom: 1.5rem; /* mb-6 */
+    }
+
+    .episodes-container {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        align-items: center;
+    }
+
+    .video {
+        font-size: 20px;
+    }
+
+    #host {
+        padding-bottom: 40px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .host-title {
+        margin-bottom: 1.5rem; /* mb-6 */
+    }
+
+    .host-name {
+        font-size: 1.5rem;
+    }
+
+    .host-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .host-socials {
+        justify-content: center;
+    }
+
+    #footer {
+        padding: 40px 20px;
+        gap: 24px;
+    }
+
+    footer {
+        background-image: url(../assets/Footer.png);
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+    }
+
+    .footer-logo {
+        width: 219px;
+        height: 32px;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 16px;
+        align-items: center;
+    }
+    .footer-mobile {
+        gap: 16px;
+    }
+}
+
+@media screen and (min-width: 576px) and (max-width: 992px) {
+
+    #banner {
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+    }
+
+    footer {
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+    }
+    #header {
+        max-width: 100%;
+        justify-content: space-around;
+    }
+    .about-stats-grid{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .episodes-container {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .grid-container {
+        grid-template-areas:
+            "premium mobile"
+            "premium global"
+            "interview rich";
+        gap: 20px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    #banner {
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+    }
+    footer {
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
     }
 }
